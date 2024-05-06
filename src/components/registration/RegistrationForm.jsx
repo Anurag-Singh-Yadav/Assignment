@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
-function RegistrationForm() {
+import { MdError } from "react-icons/md";
+function RegistrationForm({ setSubmitted}) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,12 +33,12 @@ function RegistrationForm() {
       return;
     }
     setErrorMessage("");
+    setSubmitted(true);
     console.log("Form submitted", formData);
   };
 
   const validateEmail = (email) => {
     const re = /\S+@\S+\.\S+/;
-    console.log("varifying email->", re.test(email));
     return re.test(email);
   };
 
@@ -46,7 +46,7 @@ function RegistrationForm() {
     <div className="min-h-[80vh] flex justify-center py-12">
       <div className="flex flex-col gap-4">
         <div>
-          <div className="text-[#2DA950] text-2xl text-center py-2 font-semibold">
+          <div className="text-center font-coveredByYourGrace font-semibold text-[#2DA950] text-3xl">
             Registration Form
           </div>
           <div className="flex text-4xl flex-col justify-center items-center font-bold">
@@ -76,13 +76,13 @@ function RegistrationForm() {
                 handleInputChange(event);
               }}
             />
-            <div className=" text-red-500 text-sm">{
-                errorMessage ? errorMessage : ""
+            <div className="text-[#FF0808] text-sm">{
+                errorMessage ? <div className="flex justify-start items-center gap-2"><span><MdError /> {" "}</span><span>{errorMessage}</span></div> : ""
             }</div>
             <button
               type="submit"
-              className={`py-3 text-white bg-black px-4 rounded-3xl border text-sm ${
-                isButtonDisabled && "bg-[#C9C9C9] cursor-not-allowed"
+              className={`py-3 text-white px-4 rounded-3xl border text-sm ${
+                isButtonDisabled ? "bg-[#C9C9C9] cursor-not-allowed": "bg-black"
               }`}
               disabled={isButtonDisabled}
               onClick={(e) => handleSubmit(e)}

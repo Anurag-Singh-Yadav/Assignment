@@ -49,7 +49,7 @@ function RegistrationForm({ setSubmitted}) {
           <div className="text-center font-coveredByYourGrace font-semibold text-[#2DA950] text-3xl">
             Registration Form
           </div>
-          <div className="flex text-4xl flex-col justify-center items-center font-bold">
+          <div className="flex flex-col justify-center items-center font-bold md:text-5xl sm:text-3xl text-xl text-center">
             <div>Start your success</div>
             <div>Journey here!</div>
           </div>

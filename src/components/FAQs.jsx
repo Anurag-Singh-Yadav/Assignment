@@ -27,12 +27,12 @@ const accordionData = [
 
 function FAQs() {
   return (
-    <div className="bg-[#E8EEE7] px-6 mx-8 overflow-hidden py-10 rounded-3xl mt-20 flex sm:flex-row flex-col">
+    <div className="bg-[#E8EEE7] overflow-hidden py-5 sm:py-10 rounded-3xl mt-20 flex sm:flex-row flex-col px-2 sm:px-6 mx-0 sm:mx-8">
       <div className="sm:w-1/2 relative">
         <h2 className="font-coveredByYourGrace font-medium text-2xl text-[#9E9D9D]">
           What's on your mind
         </h2>
-        <h2 className="font-bold text-4xl">Ask Questions</h2>
+        <h2 className="font-bold text-xl my-2 sm:text-2xl md:text-4xl">Ask Questions</h2>
         <img src={faqbg} alt='union' className='absolute -left-2 top-20 hidden sm:block' draggable='false'/>
       </div>
       <div className="sm:w-1/2 space-y-4">

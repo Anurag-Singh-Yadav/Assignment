@@ -8,7 +8,7 @@ export default function Accordion({ question, answer }) {
         onClick={() => setAccordionOpen((prev) => !prev)}
         className="flex text-start justify-between w-full text-[#1C1C1C]"
       >
-        <span className="text-xl font-medium">{question}</span>
+        <span className="text-medium sm:text-xl font-medium">{question}</span>
         <span className="font-semibold text-2xl">
           {accordionOpen ? "-" : "+"}
         </span>

@@ -8,7 +8,7 @@ function Register() {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="flex justify-between items-center py-3 px-6 mx-8 my-3">
+      <div className="flex justify-between items-center py-3 px-2 sm:px-6 mx-0 sm:mx-8 my-3">
         <Link to="/">
           <img src="./Vector.svg" alt="logo"></img>
         </Link>

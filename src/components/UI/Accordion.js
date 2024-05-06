@@ -6,7 +6,7 @@ export default function Accordion({ question, answer }) {
     <div className="py-2 border-b border-gray-300 space-y-2">
       <button
         onClick={() => setAccordionOpen((prev) => !prev)}
-        className="flex justify-between w-full text-[#1C1C1C]"
+        className="flex text-start justify-between w-full text-[#1C1C1C]"
       >
         <span className="text-xl font-medium">{question}</span>
         <span className="font-semibold text-2xl">

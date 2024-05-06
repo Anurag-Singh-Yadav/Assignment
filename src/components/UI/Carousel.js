@@ -6,9 +6,9 @@ export default function Carousel({ data }) {
   const handleDotClick = (index) => {
     setActiveIndex(index);
   };
-
+ 
   return (
-    <div className="relative space-y-10">
+    <div className="relative space-y-10 sm:block hidden">
       <div className="overflow-hidden">
         <ul
           className="flex transition-transform ease-in-out duration-300"

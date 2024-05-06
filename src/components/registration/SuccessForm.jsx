@@ -4,20 +4,20 @@ import { useNavigate } from "react-router-dom";
 function SuccessForm() {
   const navigate = useNavigate();
   const [timer, setTimer] = useState(5);
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setTimer((prevTimer) => {
-  //       if (prevTimer === 1) {
-  //         navigate("/");
-  //         clearInterval(intervalId);
-  //         return 0;
-  //       }
-  //       return prevTimer - 1;
-  //     });
-  //   }, 1000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTimer((prevTimer) => {
+        if (prevTimer === 1) {
+          navigate("/");
+          clearInterval(intervalId);
+          return 0;
+        }
+        return prevTimer - 1;
+      });
+    }, 1000);
 
-  //   return () => clearInterval(intervalId);
-  // }, [navigate]);
+    return () => clearInterval(intervalId);
+  }, [navigate]);
 
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-between py-12">

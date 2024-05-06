@@ -6,8 +6,10 @@ function RegistrationForm() {
     email: "",
   });
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (event) => {
+    setErrorMessage(null);
     const { name, value } = event.target;
     setFormData({
       ...formData,
@@ -26,7 +28,18 @@ function RegistrationForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!validateEmail(formData.email)) {
+      setErrorMessage("Enter a valid email address.");
+      return;
+    }
+    setErrorMessage("");
     console.log("Form submitted", formData);
+  };
+
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    console.log("varifying email->", re.test(email));
+    return re.test(email);
   };
 
   return (
@@ -63,12 +76,16 @@ function RegistrationForm() {
                 handleInputChange(event);
               }}
             />
+            <div className=" text-red-500 text-sm">{
+                errorMessage ? errorMessage : ""
+            }</div>
             <button
               type="submit"
               className={`py-3 text-white bg-black px-4 rounded-3xl border text-sm ${
                 isButtonDisabled && "bg-[#C9C9C9] cursor-not-allowed"
               }`}
               disabled={isButtonDisabled}
+              onClick={(e) => handleSubmit(e)}
             >
               Register
             </button>

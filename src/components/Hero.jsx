@@ -1,4 +1,4 @@
-import HeroSvg from "../assets/hero-section.svg";
+import BackGround from "./UI/BackGround";
 import Carousel from "./UI/Carousel";
 import Button from "./UI/PrimaryButton";
 import { LuArrowRight } from "react-icons/lu";
@@ -17,7 +17,7 @@ export default function Hero() {
       </p>
       <div className="sm:mt-20 mt-8 flex justify-between items-center sm:flex-row flex-col">
         <div className="sm:basis-1/2 ml-6 flex justify-center">
-        <img src={HeroSvg}  alt="hero" className="shrink-0 w-11/12" draggable={false}/>
+        <div><BackGround></BackGround></div>
         </div>
         <div className="sm:space-y-20 space-y-8 sm:w-1/3">
           <Carousel data={CAROUSEL_DATA} />

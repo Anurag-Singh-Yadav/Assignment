@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export default function Carousel({ data }) {
   const [activeIndex, setActiveIndex] = useState(0);
-
   const handleDotClick = (index) => {
     setActiveIndex(index);
   };

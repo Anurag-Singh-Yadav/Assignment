@@ -10,6 +10,7 @@ module.exports = {
         coveredByYourGrace: ["Covered By Your Grace", "sans-serif"],
       },
     },
+    
   },
   plugins: [],
 }
